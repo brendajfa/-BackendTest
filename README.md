@@ -43,24 +43,27 @@ Channels can’t store this rating directly (because the structure can change at
 <div align="justify">
 
 The requirements we ask for this test are:
-● Create a Django project to define an API
-● Define models to represent the structure explained above
-● Create a management command to efficiently calculate the ratings of every
-channel and export them in a csv file sorted by rating (i.e. the highest rated
-channels on top). The csv contains two columns: <channel title>, <average
-rating>
-● Create endpoints to retrieve the channels, their subchannels and its contents
-● Add unit tests to test the channel rating algorithm
+
+* Create a Django project to define an API
+* Define models to represent the structure explained above
+* Create a management command to efficiently calculate the ratings of every
+* annel and export them in a csv file sorted by rating (i.e. the highest rated
+* annels on top). The csv contains two columns: <channel title>, <average
+* ting>
+* Create endpoints to retrieve the channels, their subchannels and its contents
+* Add unit tests to test the channel rating algorithm
+
+
 Get bonus points for:
-● Adding Groups to the channels. Considering that each channel can belong to
-multiple groups.
-○ Allow filtering by group on Channels API.
-Note: Take into account that any channel’s groups set should be included in its
-parent’s group set
-● High test coverage through unit tests
-● Usage of docker to run the services
-● Addition of type annotations (bonus for passing strict mypy type checks)
-● Adding CI/CD (Gitlab CI is preferred, but you can use anything you want)
+* Adding Groups to the channels. Considering that each channel can belong to multiple groups.
+  
+> Allow filtering by group on Channels API.
+Note: Take into account that any channel’s groups set should be included in its parent’s group set
+
+* High test coverage through unit tests
+* Usage of docker to run the services
+* Addition of type annotations (bonus for passing strict mypy type checks)
+* Adding CI/CD (Gitlab CI is preferred, but you can use anything you want)
 You can use any libraries, DBMS or tools you need to accomplish the task.
 We encourage you to define a readme file with some explanations about your solution.
 
