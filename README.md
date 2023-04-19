@@ -68,3 +68,53 @@ You can use any libraries, DBMS or tools you need to accomplish the task.
 We encourage you to define a readme file with some explanations about your solution.
 
 </div>
+
+# Create a Django project
+
+```bash
+django-admin startproject immfly_django
+cd immfly_django
+python manage.py startapp myapi
+```
+
+
+# Execution procedure
+
+```bash
+cd  "C:\Users\brend\OneDrive\Escritorio\Formación\Immfly\-BackendTest"
+conda create --name immfly python=3.8
+conda activate immfly
+pip install -r requirements.txt 
+
+
+# django-admin startproject immfly_django
+# cd immfly_django
+# python manage.py startapp myapi
+
+# Run django environment
+python manage.py runserver
+
+```
+
+
+```bash
+(immfly) C:\Users\brend\OneDrive\Escritorio\Formación\Immfly\-BackendTest\immfly_django>python manage.py check myapi
+System check identified no issues (0 silenced).
+
+(immfly) C:\Users\brend\OneDrive\Escritorio\Formación\Immfly\-BackendTest\immfly_django>python manage.py makemigrations
+Migrations for 'myapi':
+  myapi\migrations\0001_initial.py
+    - Create model Channel
+    - Create model SubChannel
+    - Create model TVShow
+    - Create model Press_and_Magazines
+    - Create model Music_and_Podcasts
+    - Create model Movies
+    - Create model LifestyleContent
+    - Create model Kids
+    - Create model Games
+    - Create model Audible
+
+## To get the SQL commands
+>> python manage.py sqlmigrate myapi 0001
+```
