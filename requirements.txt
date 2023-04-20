@@ -1,2 +1,8 @@
 Django
 djangorestframework
+pillow
+pandas
+numpy
+pytest-django
+# python -m pytest
+

@@ -16,11 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from immfly_django.views import saludo
+from immfly_django.my_api.views import TVSHOW, AUDIBLE, MOVIES, LIFESTYLE, MUSIC_PODCASTS, KIDS, PRESS_MAGAZINES, GAMES
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('saludo/', saludo),
+    path('tv_show/', TVSHOW),
+    path('audible/', AUDIBLE),
+    path('movies/', MOVIES),
+    path('lifestyle/', LIFESTYLE),
+    path('musicPod/', MUSIC_PODCASTS),
+    path('kids/', KIDS),
+    path('press_mag/', PRESS_MAGAZINES),
+    path('games/', GAMES),
 ]
 
 # from django.urls import path, include
