@@ -1,0 +1,33 @@
+name: "Unit & Smoke Tests - mamba"
+on:
+  pull_request:
+    paths:
+      - immfly_django/
+      
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash -el {0}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Copy Repository Contents
+        uses: actions/checkout@main   
+   
+      - name: Install Conda environment with Micromamba
+        uses: mamba-org/provision-with-micromamba@main
+        with:
+          environment-file: immfly_django/conda-environment.yaml
+          environment-name: immfly
+          cache-env: true
+          cache-downloads: true
+          
+      - run: |
+          micromamba activate immfly
+          pip install -U pytest
+          cd immfly_django
+          pytest 
