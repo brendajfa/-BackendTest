@@ -29,4 +29,4 @@ dependencies:
     - # importlib-metadata==4.11.3
     - # entrypoints==0.4
     
-prefix: /home/runner/micromamba-root/envs/aidl
+prefix: /home/runner/micromamba-root/envs/immfly
