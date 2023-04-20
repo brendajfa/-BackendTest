@@ -1,0 +1,32 @@
+name: immfly
+# conda env create -f immfly_django/conda-environment.yml
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  # - _libgcc_mutex=0.1=conda_forge
+  - pip=22.3.1=pyhd8ed1ab_0
+  - python=3.8.13=ha86cf86_0_cpython
+  # - python_abi=3.8=2_cp38
+  
+  - pip:
+    - pandas==1.2.1
+    - wget==3.2
+    - matplotlib==3.3.3
+    - # pip==22.3.1
+    - plotly==5.12.0
+    - tqdm==4.64.1
+    - # zipp==3.11.0
+    - Django
+    - djangorestframework
+    - pillow
+    - pytest-django
+    - tensorboard==2.11.2
+    - numpy==1.24.1
+    - scipy==1.9.3
+    - # docker-pycreds==0.4.0
+    - # importlib-metadata==4.11.3
+    - # entrypoints==0.4
+    
+prefix: /home/runner/micromamba-root/envs/aidl
