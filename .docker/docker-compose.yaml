@@ -1,0 +1,11 @@
+services:
+  immfly-service: 
+    container_name: immfly_container
+    image: immfly_project:latest
+   # build:
+    #  context: app
+     # target: dev-envs
+    ports: 
+      - '8080:80'
+    #volumes:
+      #- /var/run/docker.sock:/var/run/docker.sock
