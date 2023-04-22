@@ -50,7 +50,7 @@ We encourage you to define a readme file with some explanations about your solut
 ```bash
 django-admin startproject immfly_django
 cd immfly_django
-python manage.py startapp myapi
+python manage.py startapp my_api
 ```
 
 
