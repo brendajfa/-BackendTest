@@ -1,12 +1,13 @@
 import pytest
 
-from my_api.models import Content, Channel, TVSHOW, AUDIBLE, MOVIES, LIFESTYLE, MUSIC_PODCASTS, KIDS, PRESS_MAGAZINES, GAMES
+from my_api.models import Content, Channel, TVSHOW, AUDIBLE, MOVIES, LIFESTYLE, MUSIC_PODCASTS, KIDS, PRESS_MAGAZINES, GAMES, average_rating_models
 
 import numpy as np
 import pandas as pd
 
 @pytest.mark.django_db
 class TestExample:
+    pass
     def average_rating(self, ObjectChannel_list):
 
         results = {}    
@@ -81,14 +82,23 @@ class TestExample:
 
 
         r={}
-        r["TV SHOWS"] = self.average_rating(TVSHOW.objects.all())
-        r["AUDIBLE"] = self.average_rating(AUDIBLE.objects.all())
-        r["PRESS AND MAGAZINES"] = self.average_rating(PRESS_MAGAZINES.objects.all())
-        r["KIDS"] = self.average_rating(KIDS.objects.all())
-        r["MUSIC AND PODCASTS"] = self.average_rating(MUSIC_PODCASTS.objects.all())
-        r["LIFESTYLE"] = self.average_rating(LIFESTYLE.objects.all())
-        r["MOVIES"] = self.average_rating(MOVIES.objects.all())
-        r["GAMES"] = self.average_rating(GAMES.objects.all())
+        # r["TV SHOWS"] = self.average_rating(TVSHOW.objects.all())
+        # r["AUDIBLE"] = self.average_rating(AUDIBLE.objects.all())
+        # r["PRESS AND MAGAZINES"] = self.average_rating(PRESS_MAGAZINES.objects.all())
+        # r["KIDS"] = self.average_rating(KIDS.objects.all())
+        # r["MUSIC AND PODCASTS"] = self.average_rating(MUSIC_PODCASTS.objects.all())
+        # r["LIFESTYLE"] = self.average_rating(LIFESTYLE.objects.all())
+        # r["MOVIES"] = self.average_rating(MOVIES.objects.all())
+        # r["GAMES"] = self.average_rating(GAMES.objects.all())
+        
+        r["TV SHOWS"] = average_rating_models(TVSHOW.objects.all())
+        r["AUDIBLE"] = average_rating_models(AUDIBLE.objects.all())
+        r["PRESS AND MAGAZINES"] = average_rating_models(PRESS_MAGAZINES.objects.all())
+        r["KIDS"] = average_rating_models(KIDS.objects.all())
+        r["MUSIC AND PODCASTS"] = average_rating_models(MUSIC_PODCASTS.objects.all())
+        r["LIFESTYLE"] = average_rating_models(LIFESTYLE.objects.all())
+        r["MOVIES"] = average_rating_models(MOVIES.objects.all())
+        r["GAMES"] = average_rating_models(GAMES.objects.all())
         r
 
 

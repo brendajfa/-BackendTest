@@ -35,3 +35,6 @@ def GAMES(request):
     
     return HttpResponse("GAMES Page")
 
+def HOME(request):
+    
+    return HttpResponse("HOME Page")

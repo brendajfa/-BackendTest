@@ -163,43 +163,16 @@ class Content(models.Model): # Content, corresponding to an episode of a TV seri
     # tvshow = models.ForeignKey(TV_Show, on_delete=models.CASCADE, related_name='episodes')
 
 
-def average_rating(ObjectChannel_list):
+def average_rating_models(ObjectChannel_list):
 
     results = {}    
     for objectChannel in ObjectChannel_list:
         object_content = objectChannel.content.all()
         ratings = [content.rating for content in object_content]
-        print(objectChannel.title)
+        print(object_content)
         if ratings ==[]:
-            results[objectChannel.title] = ""
+            results[objectChannel.title] = 0
         else:
-            # print(ratings)
-            # print(sum(ratings)/len(ratings))
             results[objectChannel.title] = sum(ratings)/len(ratings)
-            # print(object_content)
-            # print(ratings) 
     return results
 
-
-# # Channel.objects.values_list()
-# tv_shows = Channel.objects.create(title='TV SHOWS')
-# vikings = TVSHOW.objects.create(title='VIKINGS', parent_channel=tv_shows)
-# vikings_s1_e1 = Content.objects.create(rating = 8, tvshow_ch = vikings)
-# vikings_s1_e2 = Content.objects.create(rating = 7, tvshow_ch = vikings)
-
-
-# audible = Channel.objects.create(title='AUDIBLE')
-# vikings = AUDIBLE.objects.create(title='VIKINGS', parent_channel=audible)
-# vikings_s1_e1 = Content.objects.create(rating = 8, audible_ch = vikings)
-# vikings_s1_e2 = Content.objects.create(rating = 7, audible_ch = vikings)
-
-
-# vikings_contents = vikings.audible.all()  # Get all the contents related to vikings
-# ratings = [content.rating for content in vikings_contents]  # Extract the rating of each content
-# print(ratings)  # Print the list of ratings
-
-# channels_list = Channel.objects.all()
-# # channels_list.delete()
-# channels_list
-# # rySet [<Channel: AUDIBLE>, <Channel: MOVIES>, <Channel: TV SHOWS>, <Channel: LIFESTYLE>, <Channel: MUSIC & PODCASTS>, <Channel: KIDS>, <Channel: PRESS & MAGAZINES>, <Channel: GAMES>, <Channel: channel example>]>
-# audible = channels_list[0]
